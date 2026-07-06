@@ -71,14 +71,17 @@ export default function Pricing() {
                   <span>Almuerzo y refrigerio de alta calidad incluidos</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
-                  <span>Sede exclusiva en el Norte de la Ciudad</span>
+                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div className="flex flex-col">
+                    <span>Cl. 52 Nte. #2 DN 05, La Merced, Cali, Valle del Cauca</span>
+                    <a href="https://share.google/mM0NQhBtt0X1TtZMC" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline mt-0.5">Ver mapa de la sede</a>
+                  </div>
                 </li>
               </ul>
             </div>
             
             <div className="flex-shrink-0 flex flex-col items-center">
-              <a href="https://wa.me/573136336446?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="pricing-btn magnetic-button w-full md:w-auto bg-primary text-white px-8 py-5 rounded-[2rem] font-sans font-bold text-lg inline-flex items-center justify-center shadow-xl mb-4 hover:shadow-2xl transition-shadow opacity-0">
+              <a href="https://wa.me/19293430985?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="pricing-btn magnetic-button w-full md:w-auto bg-primary text-white px-8 py-5 rounded-[2rem] font-sans font-bold text-lg inline-flex items-center justify-center shadow-xl mb-4 hover:shadow-2xl transition-shadow opacity-0">
                 <span className="relative z-10">Reservar mi cupo</span>
               </a>
               <p className="font-mono text-xs text-dark/40 text-center">Solo 8 cupos disponibles</p>

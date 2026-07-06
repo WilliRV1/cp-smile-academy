@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
+      <div className="fixed top-12 md:top-14 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
         <nav
           ref={navRef}
           className="pointer-events-auto flex items-center justify-between w-full max-w-5xl px-4 py-3 md:px-6 md:py-4 rounded-[2rem] transition-all duration-500 bg-transparent text-white border border-transparent [&.scrolled]:bg-background/90 [&.scrolled]:backdrop-blur-xl [&.scrolled]:text-primary [&.scrolled]:border-primary/10 [&.scrolled]:shadow-lg"
@@ -56,7 +56,7 @@ export default function Navbar() {
           
           <div className="hidden md:block z-20">
             {isCoursePage ? (
-              <a href="https://wa.me/573136336446?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="magnetic-button bg-accent text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-[0_0_15px_rgba(10,132,255,0.3)]">
+              <a href="https://wa.me/19293430985?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="magnetic-button bg-accent text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-[0_0_15px_rgba(10,132,255,0.3)]">
                 <span className="relative z-10">Comprar Curso</span>
               </a>
             ) : (
@@ -80,7 +80,7 @@ export default function Navbar() {
               <a href="#features" onClick={closeMenu}>Características</a>
               <a href="#protocol" onClick={closeMenu}>Temario</a>
               <a href="#pricing" onClick={closeMenu}>Inscripción</a>
-              <a href="https://wa.me/573136336446?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="bg-accent text-white px-8 py-3 rounded-full mt-4 font-bold shadow-[0_0_15px_rgba(10,132,255,0.3)]">
+              <a href="https://wa.me/19293430985?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="bg-accent text-white px-8 py-3 rounded-full mt-4 font-bold shadow-[0_0_15px_rgba(10,132,255,0.3)]">
                 Comprar Curso
               </a>
             </>

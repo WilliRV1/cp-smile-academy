@@ -41,7 +41,7 @@ export default function Hero() {
           Curso de Interpretación de Tomografía Oral. Domina el CBCT con expertos de primer nivel.
         </p>
         <div className="hero-el mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/573136336446?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="magnetic-button bg-accent text-white px-8 py-4 rounded-[2rem] font-sans font-bold text-lg inline-flex items-center justify-center shadow-xl">
+          <a href="https://wa.me/19293430985?text=Hola,%20me%20gustar%C3%ADa%20inscribirme%20al%20Curso%20de%20Tomograf%C3%ADa." target="_blank" rel="noopener noreferrer" className="magnetic-button bg-accent text-white px-8 py-4 rounded-[2rem] font-sans font-bold text-lg inline-flex items-center justify-center shadow-xl">
             <span className="relative z-10">Inscribirse Ahora — $450.000 COP</span>
           </a>
         </div>

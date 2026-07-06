@@ -7,6 +7,7 @@ import Protocol from '../components/Protocol';
 import Syllabus from '../components/Syllabus';
 import Mentors from '../components/Mentors';
 import SocialProof from '../components/SocialProof';
+import LeadCapture from '../components/LeadCapture';
 import FAQ from '../components/FAQ';
 import Pricing from '../components/Pricing';
 
@@ -27,6 +28,7 @@ export default function CourseTomografia() {
       <Syllabus />
       <Mentors />
       <SocialProof />
+      <LeadCapture />
       <FAQ />
       <Pricing />
       <StickyCTA />
