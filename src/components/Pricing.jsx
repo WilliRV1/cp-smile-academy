@@ -74,7 +74,7 @@ export default function Pricing() {
                   <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                   <div className="flex flex-col">
                     <span>Cl. 52 Nte. #2 DN 05, La Merced, Cali, Valle del Cauca</span>
-                    <a href="https://share.google/mM0NQhBtt0X1TtZMC" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline mt-0.5">Ver mapa de la sede</a>
+                    <a href="https://maps.app.goo.gl/ArxrDqiW5c6tRnqT7" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline mt-0.5">Ver en Google Maps</a>
                   </div>
                 </li>
               </ul>
@@ -86,6 +86,19 @@ export default function Pricing() {
               </a>
               <p className="font-mono text-xs text-dark/40 text-center">Solo 8 cupos disponibles</p>
             </div>
+          </div>
+
+          {/* Interactive Map Embed */}
+          <div className="mt-10 rounded-2xl overflow-hidden border border-black/10 shadow-inner relative z-10">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7964.904553234545!2d-76.51143359999999!3d3.4821305999999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a74dea1b9183%3A0x718d1bd2444e9bd5!2sC%26P%20SMILE!5e0!3m2!1ses-419!2sco!4v1783367959885!5m2!1ses-419!2sco" 
+              width="100%" 
+              height="300" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
