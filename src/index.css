@@ -40,10 +40,13 @@
   }
   .magnetic-button {
     @apply relative overflow-hidden transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-[1.03];
+    /* Fix for border-radius clipping bug in Safari */
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
   .magnetic-button::after {
     content: '';
-    @apply absolute inset-0 bg-primary/10 translate-y-full transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
+    @apply absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
   }
   .magnetic-button:hover::after {
     @apply translate-y-0;
