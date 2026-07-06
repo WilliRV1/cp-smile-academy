@@ -36,7 +36,7 @@ export default function Mentors() {
       name: "Dr. Héctor Arboleda F.",
       specialty: "Implantología Oral",
       bio: "Odontólogo con más de 10 años de experiencia, Especialista en Implantología Oral y Abogado con Maestría en Derecho Médico. Combina la precisión quirúrgica con un riguroso estándar legal y clínico.",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop"
+      image: "/hector_arboleda.jpg"
     }
   ];
 
