@@ -70,24 +70,33 @@ export default function Features() {
     <section id="features" className="py-32 px-6 bg-background relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* Card 1 - Barajador */}
-        <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-black/5 flex flex-col h-[400px]">
+        {/* Card 1 - Exclusividad (Rediseñada) */}
+        <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-black/5 flex flex-col h-[400px] relative overflow-hidden group">
           <h3 className="font-sans font-bold text-xl mb-2 text-primary">Exclusividad</h3>
-          <p className="font-sans text-sm text-dark/60 mb-auto">Grupo limitado para máxima calidad educativa.</p>
-          <div className="relative h-48 w-full perspective-[1000px] flex items-end justify-center pb-4" ref={shuffleRef}>
-            {cards.map((card, idx) => (
-              <div 
-                key={card.id}
-                className={`absolute w-full max-w-[200px] p-4 rounded-2xl shadow-lg border border-black/5 text-center font-sans font-medium text-sm transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${card.bg}`}
-                style={{
-                  transform: `translateY(${-idx * 15}px) scale(${1 - idx * 0.05})`,
-                  zIndex: 10 - idx,
-                  opacity: 1 - idx * 0.2
-                }}
-              >
-                {card.text}
-              </div>
-            ))}
+          <p className="font-sans text-sm text-dark/60 mb-6">Máxima calidad educativa asegurada.</p>
+          
+          <div className="flex-1 flex flex-col justify-center">
+            {/* 8 Spots Visualization */}
+            <div className="grid grid-cols-4 gap-2 md:gap-3 mb-6">
+              {Array.from({length: 8}).map((_, i) => (
+                <div key={i} className="aspect-square rounded-xl border border-accent/20 bg-accent/5 flex items-center justify-center relative overflow-hidden group/spot">
+                  <div className={`w-full h-full absolute inset-0 bg-accent/20 translate-y-full group-hover/spot:translate-y-0 transition-transform duration-300 ${i < 5 ? 'bg-accent/30 translate-y-0' : ''}`}></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`relative z-10 ${i < 5 ? 'text-accent' : 'text-accent/40'}`}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between items-center text-xs font-mono text-dark/50 uppercase tracking-wider mb-2">
+              <span>Ocupación</span>
+              <span className="text-accent font-bold">5/8</span>
+            </div>
+            <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+              <div className="h-full bg-accent w-[62.5%] rounded-full"></div>
+            </div>
+          </div>
+          
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-gray-50 border border-accent/10 rounded-full text-xs font-sans font-medium text-primary">100% Personalizado</span>
+            <span className="px-3 py-1 bg-gray-50 border border-accent/10 rounded-full text-xs font-sans font-medium text-primary">Práctica Clínica</span>
           </div>
         </div>
 
@@ -113,15 +122,20 @@ export default function Features() {
               {['L','M','X','J','V','S','D'].map(d => (
                 <div key={d} className="font-mono text-xs text-dark/40">{d}</div>
               ))}
-              {Array.from({length: 21}).map((_, i) => (
-                <div 
-                  key={i} 
-                  ref={i === 12 /* 25th in a mock grid */ ? cellRef : null}
-                  className="aspect-square flex items-center justify-center font-mono text-xs rounded-md border border-black/5 bg-white text-dark/80"
-                >
-                  {i + 13}
-                </div>
-              ))}
+              {Array.from({length: 21}).map((_, i) => {
+                const day = i + 13;
+                const displayDay = day > 31 ? day - 31 : day;
+                const isNextMonth = day > 31;
+                return (
+                  <div 
+                    key={i} 
+                    ref={i === 12 /* 25th in a mock grid */ ? cellRef : null}
+                    className={`aspect-square flex items-center justify-center font-mono text-xs rounded-md border border-black/5 bg-white ${isNextMonth ? 'text-dark/30' : 'text-dark/80'}`}
+                  >
+                    {displayDay}
+                  </div>
+                );
+              })}
             </div>
             <div className="magnetic-button bg-primary text-white py-2 rounded-xl text-center text-xs font-sans font-medium w-[100px] mx-auto relative z-10 cursor-pointer">
               Guardar
