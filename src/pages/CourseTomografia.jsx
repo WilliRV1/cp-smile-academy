@@ -10,13 +10,15 @@ import SocialProof from '../components/SocialProof';
 import FAQ from '../components/FAQ';
 import Pricing from '../components/Pricing';
 
+import StickyCTA from '../components/StickyCTA';
+
 export default function CourseTomografia() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <main>
+    <main className="relative pb-24 md:pb-0">
       <Hero />
       <Features />
       <Philosophy />
@@ -27,6 +29,7 @@ export default function CourseTomografia() {
       <SocialProof />
       <FAQ />
       <Pricing />
+      <StickyCTA />
     </main>
   );
 }
