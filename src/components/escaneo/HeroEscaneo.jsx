@@ -83,7 +83,7 @@ export default function HeroEscaneo() {
           <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent rounded-[3rem] -rotate-3 scale-105"></div>
           <div className="relative bg-white p-2 rounded-[3rem] shadow-2xl border border-white">
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative bg-slate-900 flex items-center justify-center">
-              <img src="/escaneo-hero.jpg" alt="Escaneo Intraoral Digital" className="w-full h-full object-cover opacity-80" />
+              <img src="/escaneo-hero.jpg?v=2" alt="Escaneo Intraoral Digital" className="w-full h-full object-cover opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
               
               <div className="absolute bottom-8 left-8 right-8">

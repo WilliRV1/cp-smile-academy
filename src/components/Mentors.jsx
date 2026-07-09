@@ -30,7 +30,7 @@ export default function Mentors() {
       name: "Dr. Jorge Bonilla",
       specialty: "Radiología Oral y Maxilofacial",
       bio: "Especialista por la Universidad de Chile. Docente universitario con 17 años de trayectoria en programas de odontología en la ciudad de Cali. Experto en interpretación diagnóstica avanzada en imágenes orales y CBCT.",
-      image: "/jorge_bonilla.jpg"
+      image: "/jorge_bonilla.jpg?v=2"
     },
     {
       name: "Dr. Héctor Arboleda F.",

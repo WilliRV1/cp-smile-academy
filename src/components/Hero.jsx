@@ -3,8 +3,14 @@ import gsap from 'gsap';
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
+    // Ensure video plays
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.error("Video autoplay prevented:", e));
+    }
+
     let ctx = gsap.context(() => {
       gsap.fromTo(
         '.hero-el',
@@ -20,7 +26,8 @@ export default function Hero() {
       {/* Background Image (User can replace src) */}
       <div className="absolute inset-0 z-0">
         <video 
-          src="/tomografia-hero.mp4" 
+          ref={videoRef}
+          src="/tomografia-hero.mp4?v=2" 
           autoPlay 
           loop 
           muted 
