@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import AcademyHome from './pages/AcademyHome';
 import CourseTomografia from './pages/CourseTomografia';
 import CourseEscaneo from './pages/CourseEscaneo';
+import CourseDerecho from './pages/CourseDerecho';
 import WhatsAppBubble from './components/WhatsAppBubble';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<AcademyHome />} />
         <Route path="/cursos/tomografia" element={<CourseTomografia />} />
         <Route path="/cursos/escaneo-digital" element={<CourseEscaneo />} />
+        <Route path="/cursos/derecho-medico" element={<CourseDerecho />} />
+        <Route path="*" element={<AcademyHome />} />
       </Routes>
       <WhatsAppBubble />
       <Footer />

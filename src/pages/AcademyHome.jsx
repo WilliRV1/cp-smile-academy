@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
-import { ChevronRight, ArrowUpRight, BookOpen, Award, Microscope, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ChevronRight, ArrowUpRight, BookOpen, Award, Microscope, CheckCircle2, ShieldCheck, Calendar as CalendarIcon } from 'lucide-react';
 
 export default function AcademyHome() {
   const heroRef = useRef(null);
+  const [selectedDate, setSelectedDate] = useState(18);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -203,6 +204,140 @@ export default function AcademyHome() {
                 </div>
               </div>
             </Link>
+
+            {/* Tarjeta de Curso: Derecho Médico y la Imagen Diagnóstica */}
+            <Link to="/cursos/derecho-medico" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
+              <div className="h-64 overflow-hidden relative">
+                <img src="/derecho-hero.jpg" alt="Derecho Médico y la Imagen Diagnóstica" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
+                  <span className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">Presencial</span>
+                </div>
+              </div>
+              <div className="p-8 flex flex-col flex-1 relative bg-white">
+                <div className="absolute top-0 right-8 -translate-y-1/2 w-12 h-12 bg-accent rounded-full text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <ArrowUpRight size={24} />
+                </div>
+                <h3 className="font-sans font-bold text-2xl text-primary mb-3 group-hover:text-accent transition-colors pr-8">Derecho Médico y la Imagen Diagnóstica</h3>
+                <p className="font-sans text-dark/60 text-sm mb-8 flex-1">
+                  Blinda legalmente tu práctica odontológica. Conoce el valor probatorio de la imagen diagnóstica.
+                </p>
+                <div className="flex items-center justify-between border-t border-black/5 pt-6">
+                  <div className="flex flex-col">
+                    <span className="font-sans text-xs text-dark/40 uppercase tracking-wider font-bold">Inversión</span>
+                    <span className="font-sans font-black text-dark text-xl">$230.000 COP</span>
+                  </div>
+                  <span className="font-sans text-sm font-bold text-accent group-hover:underline">Ver detalles</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Calendario de Eventos */}
+      <section id="calendario" className="py-20 px-6 bg-white border-t border-black/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-sans font-bold text-3xl md:text-4xl text-primary mb-2">Calendario Académico</h2>
+            <p className="font-sans text-dark/60">Selecciona los días destacados para ver los cursos programados</p>
+          </div>
+
+          <div className="bg-background rounded-3xl p-6 md:p-8 shadow-sm border border-black/5 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Grid de Calendario */}
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <div></div>
+                <h3 className="font-sans font-bold text-xl text-primary flex items-center gap-2"><CalendarIcon size={20} className="text-accent" /> Julio 2026</h3>
+                <div></div>
+              </div>
+
+              <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold uppercase tracking-wider text-dark/40 mb-4">
+                <div>Do</div><div>Lu</div><div>Ma</div><div>Mi</div><div>Ju</div><div>Vi</div><div>Sá</div>
+              </div>
+
+              <div className="grid grid-cols-7 gap-2">
+                {/* Empty cells before Wed July 1 */}
+                <div className="aspect-square"></div>
+                <div className="aspect-square"></div>
+                <div className="aspect-square"></div>
+                
+                {/* July days */}
+                {Array.from({ length: 31 }, (_, i) => {
+                  const day = i + 1;
+                  const isActive = day === 18 || day === 25;
+                  return (
+                    <button
+                      key={day}
+                      onClick={() => {
+                        if (isActive) setSelectedDate(day);
+                      }}
+                      onMouseEnter={() => {
+                        if (isActive) setSelectedDate(day);
+                      }}
+                      className={`aspect-square flex items-center justify-center rounded-full text-sm font-bold transition-all relative ${
+                        isActive 
+                          ? selectedDate === day 
+                            ? 'bg-accent text-white scale-110 shadow-lg' 
+                            : 'bg-primary/10 text-primary hover:bg-primary/20 hover:scale-105'
+                          : 'text-dark/60 hover:bg-black/5'
+                      }`}
+                    >
+                      {day}
+                      {isActive && (
+                        <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${selectedDate === day ? 'bg-white' : 'bg-accent'}`}></span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Detalles del día seleccionado */}
+            <div className="flex flex-col justify-center border-t md:border-t-0 md:border-l border-black/5 pt-6 md:pt-0 md:pl-8">
+              <h4 className="font-sans font-bold text-lg text-primary mb-4">
+                Programación: {selectedDate ? `${selectedDate} de Julio, 2026` : "Seleccione una fecha destacada"}
+              </h4>
+
+              {selectedDate === 18 && (
+                <div className="space-y-6">
+                  {/* Escaneo */}
+                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                    <h5 className="font-sans font-bold text-dark text-base">Escaneo Digital Intraoral</h5>
+                    <p className="text-xs text-dark/50 font-medium">Horario: 8:00 AM - 12:00 PM</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $200.000 COP</p>
+                    <Link to="/cursos/escaneo-digital" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                      Ver curso &rarr;
+                    </Link>
+                  </div>
+                  {/* Derecho Médico */}
+                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                    <h5 className="font-sans font-bold text-dark text-base">Derecho Médico y la Imagen Diagnóstica</h5>
+                    <p className="text-xs text-dark/50 font-medium">Horario: 3:00 PM - 5:00 PM</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $230.000 COP</p>
+                    <Link to="/cursos/derecho-medico" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                      Ver curso &rarr;
+                    </Link>
+                  </div>
+                </div>
+              )}
+
+              {selectedDate === 25 && (
+                <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                  <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
+                  <p className="text-xs text-dark/50 font-medium">Horario: 9:00 AM - 1:00 PM</p>
+                  <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
+                  <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                    Ver curso &rarr;
+                  </Link>
+                </div>
+              )}
+
+              {!selectedDate && (
+                <p className="text-sm text-dark/40 italic">Pasa el cursor o haz clic en los días destacados (18 o 25) para ver la información de los cursos.</p>
+              )}
+            </div>
           </div>
         </div>
       </section>
