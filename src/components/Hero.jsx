@@ -19,9 +19,12 @@ export default function Hero() {
     <section ref={containerRef} className="relative h-[100dvh] w-full flex flex-col justify-end overflow-hidden bg-primary">
       {/* Background Image (User can replace src) */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2500&auto=format&fit=crop" 
-          alt="Clínica dental premium" 
+        <video 
+          src="/tomografia-hero.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent mix-blend-multiply"></div>
