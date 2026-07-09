@@ -176,15 +176,33 @@ export default function AcademyHome() {
               </div>
             </Link>
 
-            {/* Placeholder para próximos cursos */}
-            <div className="flex flex-col bg-background rounded-[2.5rem] border-2 border-dashed border-dark/10 p-8 items-center justify-center text-center min-h-[400px]">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm border border-black/5">
-                <span className="w-3 h-3 rounded-full bg-accent/40 animate-ping absolute"></span>
-                <span className="w-3 h-3 rounded-full bg-accent relative"></span>
+            {/* Tarjeta de Curso: Escaneo Digital Intraoral */}
+            <Link to="/cursos/escaneo-digital" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
+              <div className="h-64 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=1000&auto=format&fit=crop" alt="Escaneo Intraoral" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
+                  <span className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">Presencial</span>
+                </div>
               </div>
-              <h3 className="font-sans font-bold text-xl text-primary mb-2">Próximos Cursos</h3>
-              <p className="font-sans text-dark/50 text-sm max-w-xs mx-auto">Nuestro comité académico está diseñando nuevas experiencias inmersivas.</p>
-            </div>
+              <div className="p-8 flex flex-col flex-1 relative bg-white">
+                <div className="absolute top-0 right-8 -translate-y-1/2 w-12 h-12 bg-accent rounded-full text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <ArrowUpRight size={24} />
+                </div>
+                <h3 className="font-sans font-bold text-2xl text-primary mb-3 group-hover:text-accent transition-colors pr-8">Escaneo Digital Intraoral</h3>
+                <p className="font-sans text-dark/60 text-sm mb-8 flex-1">
+                  Domina el flujo de trabajo digital, desde el escaneo clínico hasta el envío al laboratorio con tecnología 3D.
+                </p>
+                <div className="flex items-center justify-between border-t border-black/5 pt-6">
+                  <div className="flex flex-col">
+                    <span className="font-sans text-xs text-dark/40 uppercase tracking-wider font-bold">Inversión</span>
+                    <span className="font-sans font-black text-dark text-xl">$200.000 COP</span>
+                  </div>
+                  <span className="font-sans text-sm font-bold text-accent group-hover:underline">Ver detalles</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
