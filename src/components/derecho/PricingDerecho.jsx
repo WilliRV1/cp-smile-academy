@@ -88,6 +88,17 @@ export default function PricingDerecho() {
             </div>
           </div>
 
+          {/* Promo Estudiantes */}
+          <div className="mt-8 bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-6 text-center shadow-sm relative z-10">
+            <h4 className="font-sans font-bold text-xl text-primary mb-2">🎓 ¡Atención Estudiantes!</h4>
+            <p className="font-sans text-dark/70 text-sm md:text-base max-w-2xl mx-auto mb-4">
+              ¿Eres estudiante de odontología? Obtén un <strong className="text-accent">20% de descuento</strong> compartiendo este curso en tus historias de Instagram y etiquetándonos.
+            </p>
+            <a href={`https://wa.me/19293430985?text=${encodeURIComponent("Hola, soy estudiante de odontología y quiero acceder al 20% de descuento publicando en mi Instagram.")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-primary px-6 py-2 rounded-full font-sans font-bold text-sm border border-primary/20 hover:bg-primary/5 transition-colors shadow-sm">
+              Solicitar mi Descuento
+            </a>
+          </div>
+
           {/* Interactive Map Embed */}
           <div className="mt-10 rounded-2xl overflow-hidden border border-black/10 shadow-inner relative z-10">
             <iframe 

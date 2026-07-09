@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronDown, Scale, FileText, FileSignature, Image, Gavel } from 'lucide-react';
+import { ChevronDown, Scale, FileText, FileSignature, Image, Gavel, ClipboardCheck } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +22,8 @@ const modules = [
     title: "Historia Clínica",
     topics: [
       { name: "Requisitos de validez", desc: "Diligenciamiento correcto, veracidad, completitud y custodia segura de la información." },
+      { name: "Evolución", desc: "Debe contener: Nivel de dolor (antes, durante y después), riesgos del procedimiento a realizar, el procedimiento como tal y las recomendaciones." },
+      { name: "Interoperabilidad", desc: "Capacidad de los sistemas de información para intercambiar datos de historias clínicas electrónicas." },
       { name: "Normatividad de archivo", desc: "Tiempos de conservación legal, acceso y reserva del expediente clínico." },
       { name: "Consecuencias de omisión", desc: "El impacto legal de registros incompletos o mal elaborados en un proceso jurídico." }
     ]
@@ -38,6 +40,16 @@ const modules = [
   },
   {
     id: 4,
+    icon: ClipboardCheck,
+    title: "Habilitación en Salud",
+    topics: [
+      { name: "Estándares de habilitación", desc: "Requisitos normativos para la prestación de servicios odontológicos." },
+      { name: "Gestión del riesgo en salud", desc: "Identificación y mitigación de riesgos legales y clínicos." },
+      { name: "Calidad y auditoría", desc: "Procesos de evaluación y mejora continua en la atención." }
+    ]
+  },
+  {
+    id: 5,
     icon: Image,
     title: "Imagen Diagnóstica como Prueba",
     topics: [
@@ -47,7 +59,7 @@ const modules = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     icon: Gavel,
     title: "Análisis de Casos y Peritaje",
     topics: [
@@ -107,7 +119,7 @@ export default function SyllabusDerecho() {
                        <Icon size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-mono text-dark/40 uppercase font-bold tracking-widest mb-1">Módulo {index + 1}</p>
+                      <p className="text-xs font-mono text-dark/40 uppercase font-bold tracking-widest mb-1">Tema {index + 1}</p>
                       <h3 className={`font-sans font-bold text-lg md:text-xl transition-colors ${isOpen ? 'text-primary' : 'text-dark'}`}>
                         {mod.title}
                       </h3>
