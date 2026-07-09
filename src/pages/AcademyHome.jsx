@@ -179,7 +179,7 @@ export default function AcademyHome() {
             {/* Tarjeta de Curso: Escaneo Digital Intraoral */}
             <Link to="/cursos/escaneo-digital" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
               <div className="h-64 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop" alt="Escaneo Intraoral" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/escaneo-hero.jpg" alt="Escaneo Intraoral" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                   <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
