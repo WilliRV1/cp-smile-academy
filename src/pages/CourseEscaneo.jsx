@@ -18,7 +18,14 @@ export default function CourseEscaneo() {
   return (
     <main className="relative pb-24 md:pb-0">
       <HeroEscaneo />
-      <Features />
+      <Features 
+        courseDate={18} 
+        courseMonth="Julio"
+        occupation={5}
+        totalSpots={8}
+        prestigeTitle="Excelencia Tecnológica"
+        prestigeDesc="Dictado por el Dr. John Freddy Prado, pionero en flujo digital. Aprende a dominar los escáneres más avanzados del mercado con protocolos probados."
+      />
       <Philosophy />
       <SyllabusEscaneo />
       <MentorEscaneo />

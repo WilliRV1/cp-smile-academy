@@ -108,7 +108,7 @@ export default function AcademyHome() {
               </div>
               <h3 className="font-serif italic text-2xl text-primary mb-3">Evidencia Clínica</h3>
               <p className="font-sans text-dark/70 leading-relaxed text-sm">
-                Pasamos de la teoría superficial a la aplicación práctica. Todo lo que enseñamos está respaldado por cientos de casos clínicos reales documentados.
+                Pasamos de la teoría superficial a la application práctica. Todo lo que enseñamos está respaldado por cientos de casos clínicos reales documentados.
               </p>
             </div>
 

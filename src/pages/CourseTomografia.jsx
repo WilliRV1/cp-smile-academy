@@ -21,7 +21,14 @@ export default function CourseTomografia() {
   return (
     <main className="relative pb-24 md:pb-0">
       <Hero />
-      <Features />
+      <Features 
+        courseDate={25} 
+        courseMonth="Julio"
+        occupation={6}
+        totalSpots={8}
+        prestigeTitle="Alto Prestigio"
+        prestigeDesc="Más de 17 años de experiencia combinada. Dictado por el Dr. Jorge Bonilla y Héctor Arboleda, garantizando una formación clínica y legal integral."
+      />
       <Philosophy />
       <TargetAndDeliverables />
       <Protocol />
