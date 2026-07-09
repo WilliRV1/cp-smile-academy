@@ -91,7 +91,7 @@ export default function HeroEscaneo() {
                   <div className="flex items-center gap-4 mb-4">
                      <img src="https://cypsmile.online/doctor/IMG_0582rojo.jpg" alt="Dr. John Freddy Prado Giraldo" className="w-16 h-16 rounded-full object-cover border-2 border-white/50" />
                      <div>
-                       <p className="text-xs uppercase tracking-widest text-white/70 font-bold mb-1">Mentor Principal</p>
+                       <p className="text-xs uppercase tracking-widest text-white/70 font-bold mb-1">Ponente Principal</p>
                        <p className="font-sans font-bold text-lg leading-tight">Dr. John Freddy Prado</p>
                      </div>
                   </div>

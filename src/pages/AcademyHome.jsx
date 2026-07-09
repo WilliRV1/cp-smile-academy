@@ -118,7 +118,7 @@ export default function AcademyHome() {
               <div className="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent transition-all duration-300">
                 <Award size={28} />
               </div>
-              <h3 className="font-serif italic text-2xl text-white mb-3">Mentores Top</h3>
+              <h3 className="font-serif italic text-2xl text-white mb-3">Ponentes Top</h3>
               <p className="font-sans text-white/70 leading-relaxed text-sm">
                 Aprende directamente de especialistas con décadas de experiencia clínica y académica, seleccionados por su prestigio y habilidades docentes.
               </p>
@@ -178,7 +178,7 @@ export default function AcademyHome() {
             </Link>
 
             {/* Tarjeta de Curso: Escaneo Digital Intraoral */}
-            <Link to="/cursos/escaneo-digital" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
+            <Link to="/cursos/escaneo-digital" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-[shadow,border-color,transform] duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
               <div className="h-64 overflow-hidden relative">
                 <img src="/escaneo-hero-new.jpg?v=1" alt="Escaneo Intraoral" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
@@ -206,9 +206,9 @@ export default function AcademyHome() {
             </Link>
 
             {/* Tarjeta de Curso: Derecho Médico y la Imagen Diagnóstica */}
-            <Link to="/cursos/derecho-medico" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
+            <Link to="/cursos/derecho-medico" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-[shadow,border-color,transform] duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
               <div className="h-64 overflow-hidden relative">
-                <img src="/derecho-hero.jpg" alt="Derecho Médico y la Imagen Diagnóstica" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/derecho-hero.png" alt="Derecho Médico y la Imagen Diagnóstica" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                   <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
@@ -226,7 +226,7 @@ export default function AcademyHome() {
                 <div className="flex items-center justify-between border-t border-black/5 pt-6">
                   <div className="flex flex-col">
                     <span className="font-sans text-xs text-dark/40 uppercase tracking-wider font-bold">Inversión</span>
-                    <span className="font-sans font-black text-dark text-xl">$230.000 COP</span>
+                    <span className="font-sans font-black text-dark text-xl">$250.000 COP</span>
                   </div>
                   <span className="font-sans text-sm font-bold text-accent group-hover:underline">Ver detalles</span>
                 </div>
@@ -315,7 +315,7 @@ export default function AcademyHome() {
                   <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
                     <h5 className="font-sans font-bold text-dark text-base">Derecho Médico y la Imagen Diagnóstica</h5>
                     <p className="text-xs text-dark/50 font-medium">Horario: 3:00 PM - 5:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $230.000 COP</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $250.000 COP</p>
                     <Link to="/cursos/derecho-medico" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
                       Ver curso &rarr;
                     </Link>

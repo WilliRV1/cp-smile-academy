@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       q: "¿Se entrega algún tipo de certificación?",
-      a: "Sí, todos los participantes que completen el entrenamiento recibirán un certificado formal de asistencia avalado por C&P Smile Academy y sus mentores."
+      a: "Sí, todos los participantes que completen el entrenamiento recibirán un certificado formal de asistencia avalado por C&P Smile Academy y sus ponentes."
     }
   ];
 

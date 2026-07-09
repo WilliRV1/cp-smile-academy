@@ -58,7 +58,7 @@ export default function PricingDerecho() {
               </div>
               <h3 className="font-sans font-bold text-3xl text-primary mb-2">Derecho Médico</h3>
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="font-sans font-bold text-4xl md:text-5xl text-dark">$230.000 COP</span>
+                <span className="font-sans font-bold text-4xl md:text-5xl text-dark">$250.000 COP</span>
               </div>
               
               <ul className="space-y-3 font-sans text-sm text-dark/80 mb-8">

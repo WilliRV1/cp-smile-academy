@@ -38,7 +38,7 @@ export default function HeroDerecho() {
               Derecho Médico:
             </span>
             <span className="hero-el font-serif italic text-5xl md:text-6xl leading-tight text-accent drop-shadow-sm">
-              La Imagen como Prueba.
+              La Imagen Diagnóstica como Prueba.
             </span>
           </h1>
           
@@ -90,7 +90,7 @@ export default function HeroDerecho() {
                   <div className="flex items-center gap-4 mb-4">
                      <img src="https://cypsmile.online/doctor/IMG_0582rojo.jpg" alt="Dr. John Freddy Prado Giraldo" className="w-16 h-16 rounded-full object-cover border-2 border-white/50" />
                      <div>
-                       <p className="text-xs uppercase tracking-widest text-white/70 font-bold mb-1">Mentor Principal</p>
+                       <p className="text-xs uppercase tracking-widest text-white/70 font-bold mb-1">Ponente Principal</p>
                        <p className="font-sans font-bold text-lg leading-tight">Dr. John Freddy Prado</p>
                      </div>
                   </div>

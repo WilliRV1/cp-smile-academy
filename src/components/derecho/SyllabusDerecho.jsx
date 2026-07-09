@@ -39,7 +39,7 @@ const modules = [
   {
     id: 4,
     icon: Image,
-    title: "Imagen como Prueba",
+    title: "Imagen Diagnóstica como Prueba",
     topics: [
       { name: "Valor probatorio", desc: "Validez jurídica de radiografías, tomografías y fotografías clínicas ante un juez." },
       { name: "Custodia e integridad", desc: "Formatos no editables y aseguramiento de la cadena de custodia de la imagen digital." },
