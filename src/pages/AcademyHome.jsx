@@ -208,10 +208,10 @@ export default function AcademyHome() {
             {/* Tarjeta de Curso: Derecho Médico y la Imagen Diagnóstica */}
             <Link to="/cursos/derecho-medico" className="group flex flex-col bg-background rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-[shadow,border-color,transform] duration-500 border border-black/5 hover:border-accent/30 hover:-translate-y-2 relative">
               <div className="h-64 overflow-hidden relative">
-                <img src="/derecho-hero.png" alt="Derecho Médico y la Imagen Diagnóstica" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src="/derecho-hero-new.png" alt="Derecho Médico y la Imagen Diagnóstica" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
+                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">25 de Julio</span>
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">Presencial</span>
                 </div>
               </div>
@@ -311,26 +311,29 @@ export default function AcademyHome() {
                       Ver curso &rarr;
                     </Link>
                   </div>
+                </div>
+              )}
+
+              {selectedDate === 25 && (
+                <div className="space-y-6">
+                  {/* Interpretación de Tomografía Oral */}
+                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                    <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
+                    <p className="text-xs text-dark/50 font-medium">Horario: 9:00 AM - 1:00 PM</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
+                    <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                      Ver curso &rarr;
+                    </Link>
+                  </div>
                   {/* Derecho Médico */}
                   <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
                     <h5 className="font-sans font-bold text-dark text-base">Derecho Médico y la Imagen Diagnóstica</h5>
-                    <p className="text-xs text-dark/50 font-medium">Horario: 3:00 PM - 5:00 PM</p>
+                    <p className="text-xs text-dark/50 font-medium">Horario: 2:00 PM - 5:00 PM</p>
                     <p className="text-xs font-bold text-accent">Inversión: $250.000 COP</p>
                     <Link to="/cursos/derecho-medico" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
                       Ver curso &rarr;
                     </Link>
                   </div>
-                </div>
-              )}
-
-              {selectedDate === 25 && (
-                <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
-                  <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
-                  <p className="text-xs text-dark/50 font-medium">Horario: 9:00 AM - 1:00 PM</p>
-                  <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
-                  <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
-                    Ver curso &rarr;
-                  </Link>
                 </div>
               )}
 

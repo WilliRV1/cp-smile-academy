@@ -53,7 +53,7 @@ export default function HeroDerecho() {
               </div>
               <div>
                 <p className="text-xs text-dark/50 uppercase font-bold tracking-wider">Fecha</p>
-                <p className="font-sans font-bold text-dark">18 de Julio</p>
+                <p className="font-sans font-bold text-dark">25 de Julio</p>
               </div>
             </div>
             
@@ -63,7 +63,7 @@ export default function HeroDerecho() {
               </div>
               <div>
                 <p className="text-xs text-dark/50 uppercase font-bold tracking-wider">Horario</p>
-                <p className="font-sans font-bold text-dark">3:00 PM - 5:00 PM</p>
+                <p className="font-sans font-bold text-dark">2:00 PM - 5:00 PM</p>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function HeroDerecho() {
           <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent rounded-[3rem] -rotate-3 scale-105"></div>
           <div className="relative bg-white p-2 rounded-[3rem] shadow-2xl border border-white">
             <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative bg-slate-900 flex items-center justify-center">
-              <img src="/derecho-hero.jpg" alt="Derecho Médico en Odontología" className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" />
+              <img src="/derecho-hero-new.png" alt="Derecho Médico en Odontología" className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
               
               <div className="absolute bottom-8 left-8 right-8">
