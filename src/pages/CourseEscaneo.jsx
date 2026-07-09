@@ -19,7 +19,7 @@ export default function CourseEscaneo() {
     <main className="relative pb-24 md:pb-0">
       <HeroEscaneo />
       <Features 
-        courseDate={18} 
+        courseDate={25} 
         courseMonth="Julio"
         occupation={5}
         totalSpots={8}

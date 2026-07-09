@@ -19,9 +19,9 @@ export default function CourseDerecho() {
     <main className="relative pb-24 md:pb-0">
       <HeroDerecho />
       <Features 
-        courseDate={18} 
+        courseDate={25} 
         courseMonth="Julio"
-        occupation={4}
+        occupation={5}
         totalSpots={8}
         prestigeTitle="Respaldo Jurídico"
         prestigeDesc="Dictado por el Dr. John Freddy Prado, MSc. en Derecho Médico. Aprende a blindar tu práctica odontológica con el poder probatorio de la imagen diagnóstica."
