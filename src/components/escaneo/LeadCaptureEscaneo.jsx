@@ -3,7 +3,7 @@ import { FileText } from 'lucide-react';
 export default function LeadCaptureEscaneo() {
   return (
     <section className="py-20 px-6 bg-primary text-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1598256989800-fea5ce5146f2?q=80&w=2000&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <h2 className="font-serif italic text-3xl md:text-4xl mb-4">¿Aún lo estás pensando?</h2>
         <p className="font-sans text-white/80 mb-8 text-lg">
