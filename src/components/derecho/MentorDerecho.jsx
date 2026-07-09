@@ -46,7 +46,7 @@ export default function MentorDerecho() {
         "Experiencia en auditoría y habilitación",
         "Docente Universitaria (USC)"
       ],
-      image: "https://ui-avatars.com/api/?name=Angela+Patricia+Bermudez&background=0b1f38&color=fff&size=512"
+      image: "/bermudez.png"
     }
   ];
 
