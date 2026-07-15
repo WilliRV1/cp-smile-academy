@@ -51,7 +51,7 @@ export default function PricingEscaneo() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                Próxima Edición: 18 de Julio
+                Próxima Edición: 25 de Julio
               </div>
               <h3 className="font-sans font-bold text-3xl text-primary mb-2">Escaneo Intraoral</h3>
               <div className="flex items-baseline gap-2 mb-6">

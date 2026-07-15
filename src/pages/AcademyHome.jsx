@@ -1,11 +1,57 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
-import { ChevronRight, ArrowUpRight, BookOpen, Award, Microscope, CheckCircle2, ShieldCheck, Calendar as CalendarIcon } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ArrowUpRight, BookOpen, Award, Microscope, CheckCircle2, ShieldCheck, Calendar as CalendarIcon } from 'lucide-react';
+
+const coursesData = [
+  {
+    id: 'escaneo',
+    date: '2026-07-25',
+    title: 'Escaneo Digital Intraoral',
+    time: '8:00 AM - 12:00 PM',
+    price: '$280.000 COP',
+    link: '/cursos/escaneo-digital'
+  },
+  {
+    id: 'derecho',
+    date: '2026-07-25',
+    title: 'Derecho Médico y la Imagen Diagnóstica',
+    time: '2:00 PM - 5:00 PM',
+    price: '$250.000 COP',
+    link: '/cursos/derecho-medico'
+  },
+  {
+    id: 'tomografia',
+    date: '2026-08-01',
+    title: 'Interpretación de Tomografía Oral',
+    time: '8:00 AM - 5:00 PM',
+    price: '$450.000 COP',
+    link: '/cursos/tomografia'
+  }
+];
+
+const getDaysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
+const getFirstDayOfMonth = (month, year) => new Date(year, month, 1).getDay();
 
 export default function AcademyHome() {
   const heroRef = useRef(null);
-  const [selectedDate, setSelectedDate] = useState(18);
+  const [currentDate, setCurrentDate] = useState(new Date(2026, 6, 1)); // Julio 2026
+  const [selectedDate, setSelectedDate] = useState('2026-07-25');
+
+  const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+  const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+  const firstDay = getFirstDayOfMonth(currentMonth, currentYear);
+
+  const prevMonth = () => {
+    setCurrentDate(new Date(currentYear, currentMonth - 1, 1));
+  };
+
+  const nextMonth = () => {
+    setCurrentDate(new Date(currentYear, currentMonth + 1, 1));
+  };
+  
+  const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -183,7 +229,7 @@ export default function AcademyHome() {
                 <img src="/escaneo-hero-new.jpg?v=1" alt="Escaneo Intraoral" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">18 de Julio</span>
+                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">25 de Julio</span>
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">Presencial</span>
                 </div>
               </div>
@@ -241,16 +287,23 @@ export default function AcademyHome() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-sans font-bold text-3xl md:text-4xl text-primary mb-2">Calendario Académico</h2>
-            <p className="font-sans text-dark/60">Selecciona los días destacados para ver los cursos programados</p>
+            <p className="font-sans text-dark/60">Navega por los meses y selecciona los días destacados para ver los cursos</p>
           </div>
 
           <div className="bg-background rounded-3xl p-6 md:p-8 shadow-sm border border-black/5 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Grid de Calendario */}
             <div>
               <div className="flex justify-between items-center mb-6">
-                <div></div>
-                <h3 className="font-sans font-bold text-xl text-primary flex items-center gap-2"><CalendarIcon size={20} className="text-accent" /> Julio - Agosto 2026</h3>
-                <div></div>
+                <button onClick={prevMonth} className="p-2 hover:bg-black/5 rounded-full transition-colors">
+                  <ChevronLeft size={20} className="text-primary" />
+                </button>
+                <h3 className="font-sans font-bold text-xl text-primary flex items-center gap-2">
+                  <CalendarIcon size={20} className="text-accent" /> 
+                  {monthNames[currentMonth]} {currentYear}
+                </h3>
+                <button onClick={nextMonth} className="p-2 hover:bg-black/5 rounded-full transition-colors">
+                  <ChevronRight size={20} className="text-primary" />
+                </button>
               </div>
 
               <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold uppercase tracking-wider text-dark/40 mb-4">
@@ -258,38 +311,38 @@ export default function AcademyHome() {
               </div>
 
               <div className="grid grid-cols-7 gap-2">
-                {/* Empty cells before Wed July 1 */}
-                <div className="aspect-square"></div>
-                <div className="aspect-square"></div>
-                <div className="aspect-square"></div>
+                {/* Empty cells */}
+                {Array.from({ length: firstDay }, (_, i) => (
+                  <div key={`empty-${i}`} className="aspect-square"></div>
+                ))}
                 
-                {/* July days and August 1st */}
-                {Array.from({ length: 32 }, (_, i) => {
-                  const day = i < 31 ? i + 1 : 1; // 1 to 31 for July, then 1 for Aug
-                  const isAug = i === 31;
-                  const dateId = isAug ? '1-ago' : day;
-                  const isActive = dateId === 18 || dateId === 25 || dateId === '1-ago';
+                {/* Days */}
+                {Array.from({ length: daysInMonth }, (_, i) => {
+                  const day = i + 1;
+                  const dateString = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                  const hasEvents = coursesData.some(c => c.date === dateString);
+                  const isSelected = selectedDate === dateString;
+
                   return (
                     <button
                       key={day}
                       onClick={() => {
-                        if (isActive) setSelectedDate(dateId);
+                        if (hasEvents) setSelectedDate(dateString);
                       }}
                       onMouseEnter={() => {
-                        if (isActive) setSelectedDate(dateId);
+                        if (hasEvents) setSelectedDate(dateString);
                       }}
                       className={`aspect-square flex items-center justify-center rounded-full text-sm font-bold transition-all relative ${
-                        isActive 
-                          ? selectedDate === dateId 
+                        hasEvents 
+                          ? isSelected 
                             ? 'bg-accent text-white scale-110 shadow-lg' 
                             : 'bg-primary/10 text-primary hover:bg-primary/20 hover:scale-105'
                           : 'text-dark/60 hover:bg-black/5'
                       }`}
                     >
                       {day}
-                      {isAug && <span className="absolute -top-3 text-[9px] text-accent">Ago</span>}
-                      {isActive && (
-                        <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${selectedDate === dateId ? 'bg-white' : 'bg-accent'}`}></span>
+                      {hasEvents && (
+                        <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white' : 'bg-accent'}`}></span>
                       )}
                     </button>
                   );
@@ -298,56 +351,30 @@ export default function AcademyHome() {
             </div>
 
             {/* Detalles del día seleccionado */}
-            <div className="flex flex-col justify-center border-t md:border-t-0 md:border-l border-black/5 pt-6 md:pt-0 md:pl-8">
+            <div className="flex flex-col justify-start border-t md:border-t-0 md:border-l border-black/5 pt-6 md:pt-0 md:pl-8">
               <h4 className="font-sans font-bold text-lg text-primary mb-4">
-                Programación: {selectedDate ? (selectedDate === '1-ago' ? '1 de Agosto, 2026' : `${selectedDate} de Julio, 2026`) : "Seleccione una fecha destacada"}
+                Programación: {selectedDate ? (() => {
+                  const [y, m, d] = selectedDate.split('-');
+                  return `${parseInt(d, 10)} de ${monthNames[parseInt(m, 10) - 1]}, ${y}`;
+                })() : "Seleccione una fecha destacada"}
               </h4>
 
-              {selectedDate === 18 && (
-                <div className="space-y-6">
-                  {/* Escaneo */}
-                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
-                    <h5 className="font-sans font-bold text-dark text-base">Escaneo Digital Intraoral</h5>
-                    <p className="text-xs text-dark/50 font-medium">Horario: 8:00 AM - 12:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $280.000 COP</p>
-                    <Link to="/cursos/escaneo-digital" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
-                      Ver curso &rarr;
-                    </Link>
-                  </div>
-                </div>
-              )}
-
-              {selectedDate === 25 && (
-                <div className="space-y-6">
-                  {/* Derecho Médico */}
-                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
-                    <h5 className="font-sans font-bold text-dark text-base">Derecho Médico y la Imagen Diagnóstica</h5>
-                    <p className="text-xs text-dark/50 font-medium">Horario: 2:00 PM - 5:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $250.000 COP</p>
-                    <Link to="/cursos/derecho-medico" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
-                      Ver curso &rarr;
-                    </Link>
-                  </div>
-                </div>
-              )}
-
-              {selectedDate === '1-ago' && (
-                <div className="space-y-6">
-                  {/* Interpretación de Tomografía Oral */}
-                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
-                    <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
-                    <p className="text-xs text-dark/50 font-medium">Horario: 8:00 AM - 5:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
-                    <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
-                      Ver curso &rarr;
-                    </Link>
-                  </div>
-                </div>
-              )}
-
-              {!selectedDate && (
-                <p className="text-sm text-dark/40 italic">Pasa el cursor o haz clic en los días destacados (18, 25 o 1) para ver la información de los cursos.</p>
-              )}
+              <div className="space-y-6">
+                {coursesData.filter(c => c.date === selectedDate).length > 0 ? (
+                  coursesData.filter(c => c.date === selectedDate).map(course => (
+                    <div key={course.id} className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                      <h5 className="font-sans font-bold text-dark text-base">{course.title}</h5>
+                      <p className="text-xs text-dark/50 font-medium">Horario: {course.time}</p>
+                      <p className="text-xs font-bold text-accent">Inversión: {course.price}</p>
+                      <Link to={course.link} className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                        Ver curso &rarr;
+                      </Link>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-dark/40 italic">Pasa el cursor o haz clic en los días destacados con un punto azul para ver la información de los cursos programados.</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
