@@ -39,15 +39,6 @@ export default function Syllabus() {
         "Artefactos y errores comunes en interpretación",
         "Navegación e identificación en los 3 cortes del espacio"
       ]
-    },
-    {
-      title: "Módulo 4: Aplicaciones Clínicas y Taller",
-      content: [
-        "Endodoncia: evaluación radicular y fracturas",
-        "Periodoncia e implantología: densidad y mediciones",
-        "Cirugía: Ubicación 3D de terceros molares",
-        "Workshop en software Blue Sky 4 (Traer archivo DICOM)"
-      ]
     }
   ];
 

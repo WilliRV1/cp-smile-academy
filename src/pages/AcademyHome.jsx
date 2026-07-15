@@ -155,7 +155,7 @@ export default function AcademyHome() {
                 <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop" alt="Tomografía" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
-                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">25 de Julio</span>
+                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">1 de Agosto</span>
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30">Presencial</span>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function AcademyHome() {
             <div>
               <div className="flex justify-between items-center mb-6">
                 <div></div>
-                <h3 className="font-sans font-bold text-xl text-primary flex items-center gap-2"><CalendarIcon size={20} className="text-accent" /> Julio 2026</h3>
+                <h3 className="font-sans font-bold text-xl text-primary flex items-center gap-2"><CalendarIcon size={20} className="text-accent" /> Julio - Agosto 2026</h3>
                 <div></div>
               </div>
 
@@ -263,30 +263,33 @@ export default function AcademyHome() {
                 <div className="aspect-square"></div>
                 <div className="aspect-square"></div>
                 
-                {/* July days */}
-                {Array.from({ length: 31 }, (_, i) => {
-                  const day = i + 1;
-                  const isActive = day === 18 || day === 25;
+                {/* July days and August 1st */}
+                {Array.from({ length: 32 }, (_, i) => {
+                  const day = i < 31 ? i + 1 : 1; // 1 to 31 for July, then 1 for Aug
+                  const isAug = i === 31;
+                  const dateId = isAug ? '1-ago' : day;
+                  const isActive = dateId === 18 || dateId === 25 || dateId === '1-ago';
                   return (
                     <button
                       key={day}
                       onClick={() => {
-                        if (isActive) setSelectedDate(day);
+                        if (isActive) setSelectedDate(dateId);
                       }}
                       onMouseEnter={() => {
-                        if (isActive) setSelectedDate(day);
+                        if (isActive) setSelectedDate(dateId);
                       }}
                       className={`aspect-square flex items-center justify-center rounded-full text-sm font-bold transition-all relative ${
                         isActive 
-                          ? selectedDate === day 
+                          ? selectedDate === dateId 
                             ? 'bg-accent text-white scale-110 shadow-lg' 
                             : 'bg-primary/10 text-primary hover:bg-primary/20 hover:scale-105'
                           : 'text-dark/60 hover:bg-black/5'
                       }`}
                     >
                       {day}
+                      {isAug && <span className="absolute -top-3 text-[9px] text-accent">Ago</span>}
                       {isActive && (
-                        <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${selectedDate === day ? 'bg-white' : 'bg-accent'}`}></span>
+                        <span className={`absolute bottom-1 w-1.5 h-1.5 rounded-full ${selectedDate === dateId ? 'bg-white' : 'bg-accent'}`}></span>
                       )}
                     </button>
                   );
@@ -297,7 +300,7 @@ export default function AcademyHome() {
             {/* Detalles del día seleccionado */}
             <div className="flex flex-col justify-center border-t md:border-t-0 md:border-l border-black/5 pt-6 md:pt-0 md:pl-8">
               <h4 className="font-sans font-bold text-lg text-primary mb-4">
-                Programación: {selectedDate ? `${selectedDate} de Julio, 2026` : "Seleccione una fecha destacada"}
+                Programación: {selectedDate ? (selectedDate === '1-ago' ? '1 de Agosto, 2026' : `${selectedDate} de Julio, 2026`) : "Seleccione una fecha destacada"}
               </h4>
 
               {selectedDate === 18 && (
@@ -316,15 +319,6 @@ export default function AcademyHome() {
 
               {selectedDate === 25 && (
                 <div className="space-y-6">
-                  {/* Interpretación de Tomografía Oral */}
-                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
-                    <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
-                    <p className="text-xs text-dark/50 font-medium">Horario: 9:00 AM - 1:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
-                    <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
-                      Ver curso &rarr;
-                    </Link>
-                  </div>
                   {/* Derecho Médico */}
                   <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
                     <h5 className="font-sans font-bold text-dark text-base">Derecho Médico y la Imagen Diagnóstica</h5>
@@ -337,8 +331,22 @@ export default function AcademyHome() {
                 </div>
               )}
 
+              {selectedDate === '1-ago' && (
+                <div className="space-y-6">
+                  {/* Interpretación de Tomografía Oral */}
+                  <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
+                    <h5 className="font-sans font-bold text-dark text-base">Interpretación de Tomografía Oral</h5>
+                    <p className="text-xs text-dark/50 font-medium">Horario: 8:00 AM - 5:00 PM</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $450.000 COP</p>
+                    <Link to="/cursos/tomografia" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
+                      Ver curso &rarr;
+                    </Link>
+                  </div>
+                </div>
+              )}
+
               {!selectedDate && (
-                <p className="text-sm text-dark/40 italic">Pasa el cursor o haz clic en los días destacados (18 o 25) para ver la información de los cursos.</p>
+                <p className="text-sm text-dark/40 italic">Pasa el cursor o haz clic en los días destacados (18, 25 o 1) para ver la información de los cursos.</p>
               )}
             </div>
           </div>

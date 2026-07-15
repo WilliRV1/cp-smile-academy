@@ -41,7 +41,7 @@ export default function TargetAndDeliverables() {
               </p>
               
               <ul className="space-y-4">
-                {["Odontólogos Generales", "Especialistas en Implantología", "Endodoncistas", "Cirujanos Maxilofaciales", "Ortodoncistas y Periodoncistas"].map((item, idx) => (
+                {["Odontólogos Generales", "Endodoncistas", "Cirujanos Maxilofaciales", "Ortodoncistas y Periodoncistas"].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-4 bg-white px-5 py-4 rounded-2xl shadow-sm border border-black/5">
                     <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
                     <span className="font-sans font-semibold text-dark">{item}</span>

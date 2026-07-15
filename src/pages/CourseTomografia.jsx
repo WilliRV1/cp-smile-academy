@@ -22,8 +22,8 @@ export default function CourseTomografia() {
     <main className="relative pb-24 md:pb-0">
       <Hero />
       <Features 
-        courseDate={25} 
-        courseMonth="Julio"
+        courseDate={1} 
+        courseMonth="Agosto"
         occupation={6}
         totalSpots={8}
         prestigeTitle="Alto Prestigio"
