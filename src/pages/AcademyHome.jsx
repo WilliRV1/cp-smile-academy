@@ -198,7 +198,7 @@ export default function AcademyHome() {
                 <div className="flex items-center justify-between border-t border-black/5 pt-6">
                   <div className="flex flex-col">
                     <span className="font-sans text-xs text-dark/40 uppercase tracking-wider font-bold">Inversión</span>
-                    <span className="font-sans font-black text-dark text-xl">$200.000 COP</span>
+                    <span className="font-sans font-black text-dark text-xl">$280.000 COP</span>
                   </div>
                   <span className="font-sans text-sm font-bold text-accent group-hover:underline">Ver detalles</span>
                 </div>
@@ -306,7 +306,7 @@ export default function AcademyHome() {
                   <div className="p-4 bg-white rounded-2xl border border-black/5 shadow-sm space-y-2">
                     <h5 className="font-sans font-bold text-dark text-base">Escaneo Digital Intraoral</h5>
                     <p className="text-xs text-dark/50 font-medium">Horario: 8:00 AM - 12:00 PM</p>
-                    <p className="text-xs font-bold text-accent">Inversión: $200.000 COP</p>
+                    <p className="text-xs font-bold text-accent">Inversión: $280.000 COP</p>
                     <Link to="/cursos/escaneo-digital" className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1">
                       Ver curso &rarr;
                     </Link>

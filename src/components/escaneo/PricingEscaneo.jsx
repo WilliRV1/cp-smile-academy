@@ -55,7 +55,7 @@ export default function PricingEscaneo() {
               </div>
               <h3 className="font-sans font-bold text-3xl text-primary mb-2">Escaneo Intraoral</h3>
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="font-sans font-bold text-4xl md:text-5xl text-dark">$200.000</span>
+                <span className="font-sans font-bold text-4xl md:text-5xl text-dark">$280.000</span>
                 <span className="font-sans text-dark/50">COP</span>
               </div>
               
