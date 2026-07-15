@@ -28,7 +28,7 @@ export default function MentorDerecho() {
   const mentors = [
     {
       name: "Dr. John Freddy Prado",
-      title: "Odontólogo Integral & MSc. Derecho Médico",
+      title: "Odontólogo Integral, Abogado & MSc. Derecho Médico",
       bio: "Docente universitario con más de 16 años de trayectoria. Combina su experticia en odontología restaurativa y tecnología digital con una sólida formación legal para garantizar la máxima seguridad, ética y precisión en cada flujo de trabajo.",
       bullets: [
         "16+ Años de experiencia",
