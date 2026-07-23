@@ -30,13 +30,13 @@ export default function Mentors() {
       name: "Dr. Jorge Bonilla",
       specialty: "Radiología Oral y Maxilofacial",
       bio: "Especialista por la Universidad de Chile. Docente universitario con 17 años de trayectoria en programas de odontología en la ciudad de Cali. Experto en interpretación diagnóstica avanzada en imágenes orales y CBCT.",
-      image: "/jorge_bonilla.heic"
+      image: "/jorge_bonilla.png"
     },
     {
       name: "Dr. Héctor Arboleda F.",
       specialty: "Implantología Oral",
       bio: "Odontólogo con más de 10 años de experiencia, Especialista en Implantología Oral y Abogado con Maestría en Derecho Médico. Combina la precisión quirúrgica con un riguroso estándar legal y clínico.",
-      image: "/hector_arboleda.heic"
+      image: "/hector_arboleda.png"
     }
   ];
 
