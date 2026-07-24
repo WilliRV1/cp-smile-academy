@@ -57,7 +57,6 @@ export default function Mentors() {
             <div key={idx} className="mentor-card group flex flex-col items-center md:items-start text-center md:text-left">
               {/* Image Container with premium frame */}
               <div className="relative w-48 h-48 md:w-64 md:h-64 mb-8 rounded-[2rem] overflow-hidden shadow-xl border border-black/5">
-                <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
